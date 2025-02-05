@@ -1,21 +1,9 @@
-import { Router } from "express";
+import { Request, Response, Router } from "express";
+import { messages } from "../db.js";
 
 const indexRouter = Router();
 
-const messages = [
-    {
-        text: "Hi there!",
-        user: "Blue",
-        added: new Date()
-    },
-    {
-        text: "Hello World!",
-        user: "Aayush",
-        added: new Date()
-    }
-];
-
-indexRouter.get('/', (req, res) => {
+indexRouter.get('/', (req: Request, res: Response) => {
     res.status(200).render("index", { messages });
 });
 
