@@ -6,21 +6,35 @@
     <body>
         <h1>Messages</h1>
         <ul>
-            <% messages.forEach((message) =>  {%>
+            <% for (let i=0; i<messages.length; i++) {%>
+                <% if (i == 0) { %>
+                        <li>
+                            <div class="date">
+                                <%= messages[i].date %>
+                            </div>
+                        </li>
+                <% } else if (messages[i].date != messages[i-1]?.date) { %>
+                        <li>
+                            <div class="date">
+                                <%= messages[i].date %>
+                            </div>
+                        </li>
+                <% } %>
                 <li>
                     <div class="messageContainer">
                         <div class="user">
-                            <%= message.user %>
+                            <%= messages[i].user %>
                         </div>
                         <div class="content">
-                            <%= message.text %>
+                            <%= messages[i].text %>
                         </div>
                         <div class="timeStamp">
-                            <%= message.added %>
+                            <%= messages[i].added %>
                         </div>
                     </div>
                 </li>
-            <%})%>
+            <%}%>
         </ul>
+        <button class="new-message"><a href="/new">New Message</a></button>
     </body>
 </html>
