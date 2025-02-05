@@ -1,5 +1,6 @@
 export type message = {
     text: string,
     user: string,
-    added: Date
-}
+    added: string,
+    date: string
+};
