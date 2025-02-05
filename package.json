@@ -25,8 +25,9 @@
     "dev": "nodemon dist/index.js",
     "tsc": "tsc",
     "clean": "rimraf ./dist",
+    "clean-ts": "rimraf ./dist/types ./dist/interfaces", 
     "copy-assets": "node tools/copyAssets.js",
-    "build": "npm-run-all clean tsc copy-assets"
+    "build": "npm-run-all clean tsc copy-assets clean-ts"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
