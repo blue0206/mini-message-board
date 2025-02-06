@@ -1,6 +1,6 @@
 import { Request, Response, Router } from "express";
 import { messages } from "../db.js";
-import { message } from "../types/index.type.js";
+import { message } from "../types/message.type.js";
 import { getMessageDate, getMessageTimestamp } from "../utils/timestamp.js";
 
 const newRouter = Router();

@@ -1,4 +1,4 @@
-import { message } from "./types/index.type.js";
+import { message } from "./types/message.type.js";
 import { getMessageDate, getMessageTimestamp } from "./utils/timestamp.js";
 
 const messages: message[] = [
