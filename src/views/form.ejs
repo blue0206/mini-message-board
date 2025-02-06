@@ -4,21 +4,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>New Message</title>
+        <link rel="stylesheet" href="/form.style.css">
     </head>
     <body>
-        <h1>New Message</h1>
-        <form method="POST" action="/new">
-            <div class="form-element">
-                <label for="author-name">Name: </label>
-                <input type="text" id="author-name" name="authorName" required />
-            </div>
-            <div class="form-element">
-                <label for="message">Message: </label>
-                <input type="text" id="message" name="message" required />
-            </div>
-            <div class="form-element">
-                <button type="submit">Send</button>
-            </div>
-        </form>
+        <header>
+            <h1>New Message</h1>
+        </header>
+        <main>
+            <form method="POST" action="/new">
+                <div class="form-element">
+                    <label for="author-name">Name: </label>
+                    <input type="text" id="author-name" name="authorName" placeholder="Your Name..." required />
+                </div>
+                <div class="form-element">
+                    <label for="message">Message: </label>
+                    <textarea rows="8" name="message" id="message" placeholder="Enter your message here..."></textarea>
+                </div>
+                <div class="form-element">
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </main>
     </body>
 </html>
