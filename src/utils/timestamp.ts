@@ -1,6 +1,6 @@
 const getMessageTimestamp = (): string => {
     const date = new Date();
-    return `${date.getHours()} : ${date.getMinutes()}`;
+    return `${date.getHours()}:${date.getMinutes()}`;
 }
 
 const getMessageDate = (): string => {
