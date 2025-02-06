@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import indexRouter from './routers/index.router.js';
 import newRouter from './routers/new.router.js';
+import messageRouter from './routers/message-details.router.js';
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', indexRouter);
 app.use('/new', newRouter);
+app.use('/messageDetails', messageRouter);
 
 const PORT = process.env.PORT || 8000;
 
