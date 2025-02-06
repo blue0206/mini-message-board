@@ -4,42 +4,46 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Message Board</title>
-        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/index.style.css">
     </head>
     <body>
-        <h1>Messages</h1>
-        <ul>
-            <% for (let i=0; i<messages.length; i++) {%>
-                <% if (i == 0) { %>
-                        <li>
-                            <div class="date">
-                                <%= messages[i].date %>
-                            </div>
-                        </li>
-                <% } else if (messages[i].date != messages[i-1]?.date) { %>
-                        <li>
-                            <div class="date">
-                                <%= messages[i].date %>
-                            </div>
-                        </li>
-                <% } %>
-                <li>
-                    <button class="messageContainer">
-                        <a href="/messageDetails/<%= messages[i].id %>">
-                            <div class="user">
-                                <%= messages[i].user %>
-                            </div>
-                            <div class="content">
-                                <%= messages[i].text %>
-                            </div>
-                            <div class="timeStamp">
-                                <%= messages[i].added %>
-                            </div>
-                        </a>
-                    </button>
-                </li>
-            <%}%>
-        </ul>
-        <button class="new-message"><a href="/new">New Message</a></button>
+        <header>
+            <h1>Message Board</h1>
+        </header>
+        <main>
+            <ul>
+                <% for (let i=0; i<messages.length; i++) {%>
+                    <% if (i == 0) { %>
+                            <li>
+                                <div class="date">
+                                    <%= messages[i].date %>
+                                </div>
+                            </li>
+                    <% } else if (messages[i].date != messages[i-1]?.date) { %>
+                            <li>
+                                <div class="date">
+                                    <%= messages[i].date %>
+                                </div>
+                            </li>
+                    <% } %>
+                    <li>
+                        <button class="message-container">
+                            <a href="/messageDetails/<%= messages[i].id %>">
+                                <div class="user">
+                                    <%= messages[i].user %>
+                                </div>
+                                <div class="content">
+                                    <%= messages[i].text %>
+                                </div>
+                                <div class="timestamp">
+                                    <%= messages[i].added %>
+                                </div>
+                            </a>
+                        </button>
+                    </li>
+                <%}%>
+            </ul>
+            <button class="new-message"><a href="/new">New Message</a></button>
+        </main>
     </body>
 </html>
