@@ -1,6 +1,7 @@
 import { Request, Response, Router } from "express";
 import { messages } from "../db.js";
 import { message } from "../types/message.type.js";
+import { v4 as uuid } from 'uuid';
 import { getMessageDate, getMessageTimestamp } from "../utils/timestamp.js";
 
 const newRouter = Router();
@@ -18,6 +19,7 @@ newRouter.post('/', (req: Request, res: Response) => {
     }
 
     const messageInstance: message = {
+        id: uuid(),
         text: message,
         user: authorName,
         added: getMessageTimestamp(),
