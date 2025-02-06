@@ -30,38 +30,24 @@ A Mini Message Board application built using Express and EJS. This project allow
 
 ## Running the Project
 
-To run the project, you need to follow these steps:
+To run the project, you need to follow this step:
 
-1. **Build the Project:**
+1. **Start the Server:**
 
-   Compile TypeScript, copy assets to the dist directory, and clean any preexisting assets:
+   This command will compile TypeScript, copy assets to the dist directory, clean any preexisting assets, and start the server:
 
    ```bash
-   npm run build
+   npm run start
    ```
-
-2. **Start the Server:**
-
-   You can start the server in two ways:
-
-   - **Without nodemon (Requires restart after changes):**
-
-     ```bash
-     npm run start
-     ```
-
-   - **Development Mode (with nodemon):**
-
-     ```bash
-     npm run dev
-     ```
 
 ## Scripts
 
-- `npm run start`: Start the server.
-- `npm run dev`: Start the server in development mode with nodemon.
+- `npm run start`: Build the project and start the server using the compiled files in the dist directory.
+- `npm run dev`: Start the server using the compiled files in the dist directory.
+- `npm run dev-watch`: Start the server in development mode with nodemon for automatic restarts.
 - `npm run build`: Compile TypeScript, copy assets, and clean the dist directory.
 - `npm run clean`: Remove the dist directory.
+- `npm run clean-ts`: Remove TypeScript-related directories (dist/types and dist/interfaces).
 - `npm run tsc`: Compile TypeScript files.
 - `npm run copy-assets`: Copy static assets to the dist directory.
 
