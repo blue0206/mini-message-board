@@ -2,6 +2,10 @@
 
 A Mini Message Board application built using Express and EJS. This project allows users to post messages and view them on a message board.
 
+## Live Preview
+
+[Live Preview](https://mini-message-board-4d8v.onrender.com) (Load time >= 50 seconds)
+
 ## Features
 
 - Post new messages with an author name.
@@ -55,7 +59,7 @@ To run the project, you need to follow this step:
 
 - `src/`: Contains the TypeScript source files.
 - `views/`: Contains EJS templates for rendering views.
-- `public/`: Contains static assets like CSS and JavaScript files.
+- `public/`: Contains static assets like CSS.
 - `dist/`: Contains the compiled JavaScript files and assets (generated after build).
 
 ## Conclusion
