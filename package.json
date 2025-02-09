@@ -23,6 +23,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node dist/index.js",
     "dev-watch": "nodemon dist/index.js",
+    "populate": "node dist/db/populatedb.js",
     "tsc": "tsc",
     "clean": "rimraf ./dist",
     "clean-ts": "rimraf ./dist/types ./dist/interfaces",
@@ -35,12 +36,13 @@
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "express-async-handler": "^1.2.0",
-    "uuid": "^11.0.5"
+    "pg": "^8.13.1"
   },
   "devDependencies": {
     "@types/ejs": "^3.1.5",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.1",
+    "@types/pg": "^8.11.11",
     "nodemon": "^3.1.9",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
