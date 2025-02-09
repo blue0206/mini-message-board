@@ -1,4 +1,5 @@
 import express, { NextFunction, Request, Response } from 'express';
+import "dotenv/config";
 import path from 'path';
 import indexRouter from './routers/index.router.js';
 import newRouter from './routers/new.router.js';
