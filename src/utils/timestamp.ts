@@ -1,29 +1,24 @@
-const getMessageTimestamp = (): string => {
-    const date = new Date();
+import { format } from 'date-fns';
 
-    let hours = Math.floor(date.getHours()/10) == 0 ? `0${date.getHours()}` : `${date.getHours()}`;
-    let minutes = Math.floor(date.getMinutes()/10) == 0 ? `0${date.getMinutes()}` : `${date.getMinutes()}`;
+function convertUTCDateToLocalDate(date: Date) {
+    var newDate = new Date(date);
+    newDate.setMinutes(date.getMinutes() - date.getTimezoneOffset());
 
-    return `${hours}:${minutes}`;
+    return newDate;   
 }
 
-const getMessageDate = (): string => {
-    const date = new Date();
-    const months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-    ];
-    return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+const getMessageTimestamp = (dbTimestamp: Date): string => {
+    const localDate = convertUTCDateToLocalDate(new Date(dbTimestamp));
+    const date = format(localDate.toLocaleString(), "h:mm a");
+
+    return date;
+}
+
+const getMessageDate = (dbDate: Date): string => {
+    const localDate = convertUTCDateToLocalDate(new Date(dbDate));
+    const date = format(localDate.toLocaleString(), "MMMM do, yyyy");
+
+    return date;
 }
 
 export { getMessageTimestamp, getMessageDate };
