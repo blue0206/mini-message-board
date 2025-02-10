@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS messages (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     text TEXT NOT NULL,
     "user" VARCHAR(200) NOT NULL,
-    added TIMESTAMP NOT NULL DEFAULT NOW(),
+    added TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     date DATE NOT NULL DEFAULT CURRENT_DATE
 );
 
@@ -40,10 +40,10 @@ async function main() {
             console.log(result.rows);
             client.end((err) => {
                 if (err) throw err;
+                console.log("Done!");
             });
         });
     });
-    console.log("Done!");
 }
 
 main();
