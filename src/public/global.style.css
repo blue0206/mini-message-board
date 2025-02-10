@@ -106,3 +106,7 @@ button {
     outline: none;
     background-color: dodgerblue;
 }
+
+.errors {
+    color: hsl(0, 100%, 50%);
+}
