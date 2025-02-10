@@ -1,9 +1,6 @@
 import { Request, Response } from 'express';
 import asyncHandler from 'express-async-handler';
 import { createMessage } from '../db/queries.js';
-// import { messages } from '../db.js';
-// import { message } from '../types/message.type.js';
-// import { getMessageDate, getMessageTimestamp } from "../utils/timestamp.js";
 import InvalidInputError from '../errors/InvalidInputError.js';
 
 const getNewMessageForm = asyncHandler(async (req: Request, res: Response) => {
@@ -15,7 +12,7 @@ const postNewMessage = asyncHandler(async (req: Request, res: Response) => {
     const message: string = req.body?.message;
 
     if (!authorName.trim() || !message.trim()) {
-        throw new InvalidInputError("Author name and message are required.");
+        throw new InvalidInputError("Name and message are required.");
     }
 
     await createMessage(message, authorName);
