@@ -11,30 +11,33 @@
             <h1>Message Details</h1>
         </header>
         <main>
-            <div class="message-container">
-                <table>
-                    <tr>
-                        <th>Message ID</th>
-                        <td><%= message.id %></td>
-                    </tr>
-                    <tr>
-                        <th>Author</th>
-                        <td><%= message.user %></td>
-                    </tr>
-                    <tr>
-                        <th>Content</th>
-                        <td><%= message.text %></td>
-                    </tr>
-                    <tr>
-                        <th>Timestamp</th>
-                        <td><%= message.added %></td>
-                    </tr>
-                    <tr>
-                        <th>Date</th>
-                        <td><%= message.date %></td>
-                    </tr>
-                </table>
-            </div>
+            <%- include('partials/errors.ejs') %>
+            <% if (locals.message) { %>
+                <div class="message-container">
+                    <table>
+                        <tr>
+                            <th>Message ID</th>
+                            <td><%= message.id %></td>
+                        </tr>
+                        <tr>
+                            <th>Author</th>
+                            <td><%= message.user %></td>
+                        </tr>
+                        <tr>
+                            <th>Content</th>
+                            <td><%= message.text %></td>
+                        </tr>
+                        <tr>
+                            <th>Timestamp</th>
+                            <td><%= message.added %></td>
+                        </tr>
+                        <tr>
+                            <th>Date</th>
+                            <td><%= message.date %></td>
+                        </tr>
+                    </table>
+                </div>
+            <% } %>
             <button><a href="/">Home</a></button>
         </main>
     </body>
