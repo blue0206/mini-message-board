@@ -24,9 +24,13 @@ app.use('/messageDetails', messageRouter);
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     console.log(err);
     if (err instanceof CustomNotFoundError) {
-        res.status(err.statusCode).redirect("/");
+        res.status(err.statusCode).render("message-details", {
+            errors: [err]
+        });
     } else if (err instanceof InvalidInputError) {
-        res.status(err.statusCode).redirect("/new");
+        res.status(err.statusCode).render("form", {
+            errors: [err]
+        });
     } else {
         res.status(500).send(err.message || "Internal Server Error");
     }
