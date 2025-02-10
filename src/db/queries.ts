@@ -16,8 +16,10 @@ async function getAllMessages() {
 async function getMessage(id: number) {
     const result = await pool.query("SELECT * FROM messages WHERE id = $1", [id]);
     const row: QueryResultRow = result.rows[0];
-    row.added = getMessageTimestamp(row.added);
-    row.date = getMessageDate(row.date);
+    if (row) {
+        row.added = getMessageTimestamp(row.added);
+        row.date = getMessageDate(row.date);
+    }
     return row;
 }
 
