@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import asyncHandler from 'express-async-handler';
-import { messages } from '../db.js';
-import { message } from '../types/message.type.js';
-import { v4 as uuid } from "uuid";
-import { getMessageDate, getMessageTimestamp } from "../utils/timestamp.js";
+import { createMessage } from '../db/queries.js';
+// import { messages } from '../db.js';
+// import { message } from '../types/message.type.js';
+// import { getMessageDate, getMessageTimestamp } from "../utils/timestamp.js";
 import InvalidInputError from '../errors/InvalidInputError.js';
 
 const getNewMessageForm = asyncHandler(async (req: Request, res: Response) => {
@@ -18,15 +18,7 @@ const postNewMessage = asyncHandler(async (req: Request, res: Response) => {
         throw new InvalidInputError("Author name and message are required.");
     }
 
-    const messageInstance: message = {
-        id: uuid(),
-        text: message,
-        user: authorName,
-        added: getMessageTimestamp(),
-        date: getMessageDate()
-    };
-
-    messages.push(messageInstance);
+    await createMessage(message, authorName);
 
     res.status(200).redirect("/");
 });
