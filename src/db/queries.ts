@@ -3,9 +3,9 @@ import { QueryResultRow } from "pg";
 import { getMessageTimestamp, getMessageDate } from "../utils/timestamp.js";
 
 async function getAllMessages() {
-    const result = await pool.query("SELECT * FROM messages");
+    const result = await pool.query("SELECT *, added AT TIME ZONE 'UTC' AS added_utc FROM messages");
     const rows = result.rows.map((row: QueryResultRow) => {
-        row.added = getMessageTimestamp(row.added);
+        row.added = getMessageTimestamp(row.added_utc);
         row.date = getMessageDate(row.date);
         return row;
     });
@@ -14,10 +14,10 @@ async function getAllMessages() {
 }
 
 async function getMessage(id: number) {
-    const result = await pool.query("SELECT * FROM messages WHERE id = $1", [id]);
+    const result = await pool.query("SELECT *, added AT TIME ZONE 'UTC' AS added_utc FROM messages WHERE id = $1", [id]);
     const row: QueryResultRow = result.rows[0];
     if (row) {
-        row.added = getMessageTimestamp(row.added);
+        row.added = getMessageTimestamp(row.added_utc);
         row.date = getMessageDate(row.date);
     }
     return row;
