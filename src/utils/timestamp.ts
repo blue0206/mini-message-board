@@ -4,6 +4,7 @@ import moment from 'moment-timezone';
 const getMessageTimestamp = (dbTimestamp: any): string => {
     const utcDate = new Date(dbTimestamp);
     const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    console.log("TIMEZONE:\t", timeZone);
     console.log("DBTS", dbTimestamp);
     console.log("UTS", utcDate);
     const localDate = moment
