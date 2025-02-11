@@ -6,7 +6,7 @@ export const timeFormat = asyncHandler(async (req: Request, res: Response) => {
     const { time, timeZone } = req.body;
     if (!time.trim()) {
         res.status(400).json({
-            message: "Please provide a valid time"
+            error: "Invalid timestamp."
         });
     }
     if (!timeZone.trim()) {
