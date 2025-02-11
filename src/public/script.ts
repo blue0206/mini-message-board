@@ -5,7 +5,7 @@ async function renderTimestamp() {
     }
 }
 
-async function formatTimestamp(time: string) {
+async function formatTimestamp(time: string): Promise<string> {
     const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     return fetch("/api/timeFormat", {
         method: "POST",
