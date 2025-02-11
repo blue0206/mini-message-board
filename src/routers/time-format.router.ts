@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { timeFormat } from "../controllers/date-time-format.controller.js";
+import { timeFormat } from "../controllers/time-format.controller.js";
 
 const timeFormatRouter = Router();
 
