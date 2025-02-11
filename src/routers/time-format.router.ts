@@ -3,6 +3,6 @@ import { timeFormat } from "../controllers/time-format.controller.js";
 
 const timeFormatRouter = Router();
 
-timeFormatRouter.post('/timeFormat', timeFormat);
+timeFormatRouter.post("/timeFormat", timeFormat);
 
 export default timeFormatRouter;

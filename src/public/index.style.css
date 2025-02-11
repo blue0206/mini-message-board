@@ -1,91 +1,90 @@
 @import "./global.style.css";
 
 ul {
-    list-style: none;
-    overflow: auto;
-    max-height: 80%;
-    width: 100%;
-    padding-inline: 16px;
+  list-style: none;
+  overflow: auto;
+  max-height: 80%;
+  width: 100%;
+  padding-inline: 16px;
 
-    display: grid;
-    gap: 16px;
+  display: grid;
+  gap: 16px;
 }
 
 li:has(> div.date) {
-    background-color: aliceblue;
-    color: rgb(92, 92, 92);
-    display: flex;
-    justify-content: center;
+  background-color: aliceblue;
+  color: rgb(92, 92, 92);
+  display: flex;
+  justify-content: center;
 }
 
 div.date {
-    background-color: hsl(0, 0%, 88%);
-    width: max-content;
-    padding: .25rem .5rem;
-    border-radius: 11px;
+  background-color: hsl(0, 0%, 88%);
+  width: max-content;
+  padding: 0.25rem 0.5rem;
+  border-radius: 11px;
 }
 
 li {
-    width: 100%;
-    background-color: hsl(189, 77%, 82%);
-    border-radius: 16px;
-    border-top-left-radius: 0;
+  width: 100%;
+  background-color: hsl(189, 77%, 82%);
+  border-radius: 16px;
+  border-top-left-radius: 0;
 }
 
 button:not(.new-message) {
-    width: inherit;
+  width: inherit;
 }
 
 button {
-    padding: 0;
+  padding: 0;
 }
 
 button > a {
-    height: 100%;
-    width: 100%;
-    padding: .85rem;
+  height: 100%;
+  width: 100%;
+  padding: 0.85rem;
 }
 
 button.new-message {
-    align-self: center;
-    margin-bottom: 16px;
-    height: 40px;
-    width: calc(max-content + 32px);
+  align-self: center;
+  margin-bottom: 16px;
+  height: 40px;
+  width: calc(max-content + 32px);
 
-    color: hsl(0, 0%, 100%);
-    font-weight: 800;
+  color: hsl(0, 0%, 100%);
+  font-weight: 800;
 }
 
 .message-container {
-    background-color: inherit;
+  background-color: inherit;
 }
 
 .message-container > a {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    gap: 4px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 4px;
 
-    padding: 4px;
+  padding: 4px;
 }
 
-
 div.user {
-    font-weight: 800;
-    font-size: .85rem;
-    justify-self: start;
+  font-weight: 800;
+  font-size: 0.85rem;
+  justify-self: start;
 }
 
 div.content {
-    justify-self: start;
-    max-width: 100%;
-    overflow: hidden;
-    overflow-wrap: break-word;
+  justify-self: start;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 div.timestamp {
-    font-size: .75rem;
-    font-weight: 200;
-    color: hsl(0, 0%, 0%);
-    place-self: end;
+  font-size: 0.75rem;
+  font-weight: 200;
+  color: hsl(0, 0%, 0%);
+  place-self: end;
 }

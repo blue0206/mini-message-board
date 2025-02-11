@@ -21,29 +21,29 @@ VALUES
 `;
 
 async function main() {
-    console.log("Seeding...");
-    const client = new Client({
-        user: process.env.DB_USER,
-        password: process.env.DB_PASSWORD,
-        host: process.env.DB_HOST,
-        port: Number(process.env.DB_PORT),
-        database: process.env.DB_DATABASE,
-        ssl: {
-            rejectUnauthorized: true,
-            ca: process.env.DB_CA,
-        }
-    });
-    client.connect((err) => {
+  console.log("Seeding...");
+  const client = new Client({
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT),
+    database: process.env.DB_DATABASE,
+    ssl: {
+      rejectUnauthorized: true,
+      ca: process.env.DB_CA,
+    },
+  });
+  client.connect((err) => {
+    if (err) throw err;
+    client.query(SQL, (err, result) => {
+      if (err) throw err;
+      console.log(result.rows);
+      client.end((err) => {
         if (err) throw err;
-        client.query(SQL, (err, result) => {
-            if (err) throw err;
-            console.log(result.rows);
-            client.end((err) => {
-                if (err) throw err;
-                console.log("Done!");
-            });
-        });
+        console.log("Done!");
+      });
     });
+  });
 }
 
 main();

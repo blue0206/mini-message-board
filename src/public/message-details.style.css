@@ -1,39 +1,42 @@
 @import "./global.style.css";
 
 main {
-    margin-top: 32px;
-    gap: 32px;
+  margin-top: 32px;
+  gap: 32px;
 }
 
 div.message-container {
-    justify-self: center;
+  justify-self: center;
 
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    padding-inline: 16px;
+  padding-inline: 16px;
 }
 
 button {
-    align-self: center;
-    color: hsl(0, 0%, 100%);
-    font-weight: 800;
-    padding: 0;
-    height: 40px;
-    width: calc(max-content + 32px);
+  align-self: center;
+  color: hsl(0, 0%, 100%);
+  font-weight: 800;
+  padding: 0;
+  height: 40px;
+  width: calc(max-content + 32px);
 }
 
 button > a {
-    padding-inline: 32px;
-    padding-block: 16px;
+  padding-inline: 32px;
+  padding-block: 16px;
 }
 
-table, th, td {
-    border-collapse: collapse;
-    border: 1px solid black;
+table,
+th,
+td {
+  border-collapse: collapse;
+  border: 1px solid black;
 }
 
-th, td {
-    padding-inline: 11px;
-    text-align: left;
+th,
+td {
+  padding-inline: 11px;
+  text-align: left;
 }

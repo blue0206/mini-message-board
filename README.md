@@ -21,16 +21,16 @@ A Mini Message Board application built using Express and EJS. This project allow
 
 1. **Clone the repository:**
 
-    ```bash
-    git clone https://github.com/blue0206/mini-message-board.git
-    cd mini-message-board
-    ```
+   ```bash
+   git clone https://github.com/blue0206/mini-message-board.git
+   cd mini-message-board
+   ```
 
 2. **Install dependencies:**
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 ## Running the Project
 
@@ -64,4 +64,4 @@ To run the project, you need to follow this step:
 
 ## Conclusion
 
-The Mini Message Board project is a simple example of how to create a web application with Express, TypeScript, and EJS. It demonstrates the basics of routing, templating, and error handling. 
+The Mini Message Board project is a simple example of how to create a web application with Express, TypeScript, and EJS. It demonstrates the basics of routing, templating, and error handling.
